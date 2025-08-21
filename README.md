@@ -3,7 +3,8 @@ Termostato Inteligente con NodeMCU y MAX6675
 Este proyecto es un termostato de bajo costo y alto rendimiento construido alrededor de un microcontrolador NodeMCU (ESP8266). Su objetivo principal es monitorear y controlar la temperatura ambiente o de un proceso específico, ofreciendo una solución completa con interfaz web, pantalla LCD y control de un relé.
 
 Características Principales
-Monitoreo en Tiempo Real: Mide la temperatura con alta precisión usando un sensor MAX6675(o el Ds18b20 y la muestra en una pantalla LCD de 16x2.
+Monitoreo en Tiempo Real: Mide la temperatura con alta precisión usando un sensor MAX6675(o el Ds18b20) y la muestra en una pantalla LCD de 16x2.
+
 *esta tambien el proyecto con sonda ds18b20, que sensa a temperaturas negativas
 
 Interfaz Web Interactiva: Ofrece una página web local con un panel de control que muestra la temperatura actual, estadísticas (mínimo, máximo, promedio) y una gráfica con el historial completo de las mediciones.tambien un menu de configuracion para programar todo desde ahi
