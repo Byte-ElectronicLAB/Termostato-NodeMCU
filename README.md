@@ -1,20 +1,29 @@
-Termostato Inteligente con NodeMCU y MAX6675
+Termostato Inteligente Pro V5 (ESP8266 / NodeMCU)
+Esta es la versión avanzada y optimizada del termostato inteligente. Se ha evolucionado de un sistema de control simple a una solución robusta de monitoreo dual y gestión de red mejorada, diseñada para entornos que requieren precisión y alta disponibilidad.
 
-Este proyecto es un termostato de bajo costo y alto rendimiento construido alrededor de un microcontrolador NodeMCU (ESP8266). Su objetivo principal es monitorear y controlar la temperatura ambiente o de un proceso específico, ofreciendo una solución completa con interfaz web, pantalla LCD y control de un relé.
+🚀 Mejoras y Nuevas Características de la V5
+Doble Sensado (DS18B20): Soporte nativo para dos sensores de temperatura independientes. El sistema permite elegir el modo de control: basado en el Sensor 1, en el Sensor 2 o en el Promedio de ambos.
 
-Características Principales
-Monitoreo en Tiempo Real: Mide la temperatura con alta precisión usando un sensor MAX6675(o el Ds18b20) y la muestra en una pantalla LCD de 16x2.
+Sistema de Alertas Configurable: Incluye lógica para disparar alertas de temperatura máxima y mínima, con opción de habilitar o deshabilitar la función desde el panel.
 
-*esta tambien el proyecto con sonda ds18b20, que sensa a temperaturas negativas
+Arquitectura Multi-Nodo: Nueva capacidad para gestionar una red de nodos. El sistema puede comunicarse con otras IPs de la red para centralizar o distribuir información de monitoreo.
 
-Interfaz Web Interactiva: Ofrece una página web local con un panel de control que muestra la temperatura actual, estadísticas (mínimo, máximo, promedio) y una gráfica con el historial completo de las mediciones.tambien un menu de configuracion para programar todo desde ahi
+Actualizaciones Inalámbricas (OTA): Integración de ESP8266HTTPUpdateServer, lo que permite cargar nuevas versiones del firmware directamente desde el navegador sin necesidad de conectar el dispositivo por USB.
 
-Control del Relé: Permite establecer una temperatura objetivo desde la interfaz web. El sistema activa o desactiva un relé automáticamente para mantener la temperatura dentro del rango deseado.
+Interfaz Web Profesional: Panel interactivo con visualización de estadísticas avanzadas, gráficos en tiempo real mediante Highcharts y un menú de configuración integral para todos los parámetros del sistema.
 
-Configuración Persistente: Todos los parámetros de configuración (SSID, contraseña, temperatura objetivo, offset de calibración, etc.) se guardan en la memoria EEPROM del NodeMCU, por lo que no se pierden al reiniciar el dispositivo.
+Gestión de Red Avanzada: Implementación de MDNS para acceder mediante un nombre de dominio local (ej: termostato.local) y lógica de reconexión crítica para entornos industriales o domésticos.
 
-Modo de Punto de Acceso (AP): Si el dispositivo no puede conectarse a la red Wi-Fi configurada, crea su propia red ("NodeMCU-Config") para que puedas acceder a la interfaz web y configurar las credenciales de tu red sin necesidad de reprogramar.
+Características Técnicas
+Control de Relé por Histéresis: Implementa una ventana de 0.5°C para evitar el "cicleo" rápido del relé, protegiendo la vida útil de los actuadores (compresores, resistencias, etc.).
 
-Sincronización de Hora (NTP): Utiliza un servidor de tiempo (NTP) para asegurar que el historial de datos del gráfico tenga marcas de tiempo precisas y confiables.
+Pantalla LCD 16x2 I2C: Visualización dinámica que alterna entre las lecturas de ambos sensores y el estado de la conexión (IP del dispositivo).
 
-Autogestión de Red: El código incluye una lógica de reconexión automática de Wi-Fi para garantizar la estabilidad del servicio.
+Configuración Persistente (EEPROM): Almacenamiento seguro de credenciales WiFi, offsets de calibración para cada sensor, intervalos de muestreo y objetivos de temperatura.
+
+Modo de Rescate (AP): Si la red configurada no está disponible, el dispositivo levanta un punto de acceso propio para su reconfiguración.
+
+Sincronización NTP: Registro preciso de eventos y gráficas mediante servidores de tiempo externos.
+
+Comandos de Ejecución y Configuración
+El sistema permite la edición de parámetros críticos mediante la interfaz web, eliminando la necesidad de tocar el código fuente para ajustes de terreno.
